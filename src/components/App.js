@@ -13,13 +13,13 @@ class App extends React.Component {
     }
   }
 
-  getVenues() {
+  componentDidMount() {
     const clientID = process.env.REACT_APP_FOURSQUARE_CLIENT_ID;
     console.log(clientID)
     const clientSECRET = process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET
     console.log(clientSECRET)
 
-    let setVenueState = this.setState.bind(this);
+    // let setVenueState = this.setState.bind(this);
 
     const BASE_URL = 'https://api.foursquare.com/v2/venues/explore?';
 
@@ -27,34 +27,25 @@ class App extends React.Component {
       .get(BASE_URL, {
         params: {
           near: "Los Angeles",
-          query: 'sushi',
+          query: "sushi",
           limit: 5,
           v: 20190204,
           client_id: clientID,
           client_secret: clientSECRET
         }
       })
-      .then(response => console.log(response.data.response.groups[0].items))
-      .then(response => {
-        setVenueState({venues: response.data.response.groups[0].items})
-      })
+	//   .then(response => console.log(response))
+	  .then(response => console.log(response.data.response.groups[0].items))
       .catch(error => {
         console.log(error.response);
       })
     
   }
 
-  componentDidMount() {
-    this.getVenues();
-  }
-
   render() {
-    const venueList = this.state.venues.map(item =>
-      <li>{item.venue.name}</li>  
-    )
 
     return (
-      <ul>{venueList}</ul>
+      <ul></ul>
     );
   }
 
