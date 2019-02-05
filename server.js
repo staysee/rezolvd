@@ -11,7 +11,7 @@ const jsonParser = bodyParser.json();
 const app = express();
 
 app.use(morgan('common'));
-app.use(express.static('client'));
+app.use(express.static('public'));
 
 //CORS
 app.use(function (req, res, next) {
