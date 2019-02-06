@@ -54,7 +54,7 @@ app.get('/venues/:id', (req, res) => {
 		});
 });
 
-app.post('/venues', (req, res) => {
+app.post('/venues', jsonParser, (req, res) => {
 	const requiredFields = ['name'];
 	for (let i=0; i<requiredFields.length; i++) {
 		const field = requiredFields[i];
@@ -69,10 +69,9 @@ app.post('/venues', (req, res) => {
 		.create({
 			name: req.body.name
 		})
-		.then(
-			venue => res.status(201).json(venue.serialize())
-		)
+		.then(venue => res.status(201).json(venue.serialize()))
 		.catch(err => {
+			console.error(err);
 			res.status(500).json({message: 'Internal server error'});
 		});
 })

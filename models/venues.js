@@ -20,5 +20,15 @@ const venueSchema = mongoose.Schema({
     }
 })
 
+venueSchema.methods.serialize = function() {
+    return {
+        id: this._id,
+        name: this.name,
+        categories: this.categories,
+        contact: this.contact
+    }
+
+}
+
 const Venue = mongoose.model('Venue', venueSchema);
 module.exports = { Venue };
