@@ -2,4 +2,11 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: wiFx40gF+JTrfO7Fj2twlH3tMVUD8S409FDdHvVxdf56KURccNCacF082kZYcz0Wd3oE53MnAu1rwxkv/LBEPWwYjGU20hmfw96YMf27Y63TK1STJYmw6HnLYxfVqiH42igpl/b09qxIRhRJOSBjE8vQQdIW1RsGyprupPzf1M8hoULon5KCGrelcjT6pA73XZMmj2eN5hhLvqTupL53fs/lENR1xqAqkpYM0H4Q8eRWqV4rYjcgaWDraMP9lUeSPgrvdA77oj3fgJJXjEC19dsyE593naawxSQOi+2QEDXEFCMyZZP8INlIiBsb4QWCzaFpUxb1xl+1Otl+hzf4/v9AiLbgE24gB4o2xeZfPs5SLKGvH1tYwxb/Gjm/Xu2nnRDt3aapTtxtbg0vPuO91RmpFslrtstVBeXAvOl76vkS4B9+h98yLgqEiB3jShabJgpyVIt5DmhXgnZPs3APKjHv1jnCJ3ikq8E0PneSt/hDXg2GFwWQIUpijYNMP+qapWpbv+zoAfDFUQaRQ5beAo7X4d3gGeKq5knElSulET0SHVZYJZXW9P634S8JMKW8sHHj3p5OIUaoILEyJU3hjylTnY0KxnwBXZzQdGF9X0f3tMF6nKsVYWPzqXQwPiO0HXS2l7nIj9ZYnsl1IHpCZt0qbZUcAXRVz3kyddqBc2k=
+  app: rezolvd-client
+  on:
+    repo: staysee/rezolvd-client
