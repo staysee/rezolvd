@@ -15,8 +15,8 @@ class App extends React.Component {
 
   componentDidMount() {
     const clientID = process.env.REACT_APP_FOURSQUARE_CLIENT_ID;
-	const clientSECRET = process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET;
-	//console.log(clientID)
+		const clientSECRET = process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET;
+		//console.log(clientID)
     //console.log(clientSECRET)
 
 	const BASE_URL = 'https://api.foursquare.com/v2/venues/explore?';
