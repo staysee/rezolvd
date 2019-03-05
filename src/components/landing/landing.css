@@ -1,0 +1,16 @@
+.title, .description, .description-2 {
+    text-align: center;
+}
+.product-features {
+    display: flex;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.feature {
+    width: 33%;
+    height: 150px;
+    padding: 5px;
+    border: 2px solid black;
+}

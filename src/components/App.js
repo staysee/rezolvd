@@ -1,62 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
-import './App.css';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
-class App extends React.Component {
+import Landing from './landing/landing';
+import Favorites from './favorites/favorites'
 
-  constructor() {
-    super();
+export default function App(props) {
+	return (
+		<Router>
+			<div className="app">
+				<header>
+					{/* <h1><Link to="/">REZOLVD</Link></h1> */}
+				</header>
 
-    this.state = {
-      venues: []
-    }
-  }
+				<main>
+					<Route exact path="/" component={Landing} />
+					{/* <Route exact path="/favorites" component={Favorites} /> */}
 
-  componentDidMount() {
-    const clientID = process.env.REACT_APP_FOURSQUARE_CLIENT_ID;
-		const clientSECRET = process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET;
-		//console.log(clientID)
-    //console.log(clientSECRET)
-
-	const BASE_URL = 'https://api.foursquare.com/v2/venues/explore?';
-
-    axios
-		.get(BASE_URL, {
-			params: {
-				near: "Los Angeles",
-				query: "sushi",
-				limit: 5,
-				v: 20190204,
-				client_id: clientID,
-				client_secret: clientSECRET
-			}
-		})
-		.then(response => {
-			let items = response.data.response.groups[0].items;
-			console.log(items);
-			this.setState({
-				venues: items
-			})
-		})
-		.catch(error => {
-			console.log(error.response);
-		})
-    
-  }
-
-  render() {
-	const venueList = this.state.venues.map(item =>
-		<li>{item.venue.name}</li>	
-	);
-    return (
-		<div>
-			<ul>{ venueList }</ul>
-		</div>
-		
-    );
-  }
-
+				</main>
+			</div>
+		</Router>
+	)
 }
-
-export default App;
