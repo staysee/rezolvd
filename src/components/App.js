@@ -6,7 +6,6 @@ import Favorites from './favorites/favorites'
 
 export default function App(props) {
 	return (
-		<Router>
 			<div className="app">
 				<header>
 					{/* <h1><Link to="/">REZOLVD</Link></h1> */}
@@ -18,6 +17,5 @@ export default function App(props) {
 
 				</main>
 			</div>
-		</Router>
 	)
 }

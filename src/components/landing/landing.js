@@ -1,6 +1,8 @@
 import React from 'react';
 import './landing.css';
 
+import {RegistrationForm} from '../registration-form/registration-form';
+
 export default class Landing extends React.Component {
     constructor(props) {
         super(props);
@@ -35,7 +37,7 @@ export default class Landing extends React.Component {
 
                 <div className="landing-signup">
                     <h3>Join today</h3>
-                    <SignupForm />
+                    <RegistrationForm />
                 </div>
 
             </div>
