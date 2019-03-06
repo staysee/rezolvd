@@ -1,7 +1,7 @@
 import React from 'react';
 import './landing.css';
 
-import {RegistrationForm} from '../registration-form/registration-form';
+import RegistrationForm from '../registration-form/registration-form';
 
 export default class Landing extends React.Component {
     constructor(props) {
