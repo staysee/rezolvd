@@ -1,0 +1,13 @@
+.registration-form {
+    text-align: center;
+    width: 60%;
+    margin: 40px auto 0px;
+}
+
+.registration-form input {
+    font-size: 14px;
+}
+
+.registration-form label {
+    font-size: 12px;
+}

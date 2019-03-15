@@ -1,7 +1,8 @@
 import React from 'react';
-import './landing.css';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import '../styles/landing.css';
 
-import RegistrationForm from '../registration-form/registration-form';
+import LoginForm from './login-form';
 
 export default class Landing extends React.Component {
     constructor(props) {
@@ -35,9 +36,9 @@ export default class Landing extends React.Component {
 
                 <h3 class="description-2">Let us help you select the next hangout</h3>
 
-                <div className="landing-signup">
-                    <h3>Join today</h3>
-                    <RegistrationForm />
+                <LoginForm />
+                <div className="sign-up">
+                    <button><Link to="/registration">Join today</Link></button>
                 </div>
 
             </div>
