@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from './navigation';
 import Venues from './venues';
 import '../styles/dashboard.css';
+import SearchVenues from './search-venues';
 
 export default class Dashboard extends React.Component {
     render() {
@@ -17,6 +18,7 @@ export default class Dashboard extends React.Component {
                         <div className="action-step">Choose My Hangout</div>
                     </section>
                     <section className="screen">
+                        <SearchVenues />
                         <Venues />
                     </section>
                 </div>
