@@ -1,0 +1,38 @@
+body {
+    background-image: url("./garrett-parker-247217-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.container {
+    width: 75%;
+    border-radius: 5px;
+    margin: 10px auto 0 auto;
+    height: 460px;
+    border: 1px dotted white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    display: flex;
+}
+
+.actions {
+    float: left;
+    border: 2px solid red;
+    width: 25%;
+}
+
+.action-step {
+    /* background-color: rgba(162, 158, 144, 0.91); */
+    height: 130px;
+    margin: 11px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.85), 0 6px 20px 0 rgba(116, 108, 108, 0.67);
+    text-align: center;
+}
+
+.screen {
+    float: right;
+    border: 2px solid green;
+    width: 75%;
+}
