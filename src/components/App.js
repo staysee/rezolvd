@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Landing from './landing';
 import RegistrationForm from './registration-form';
 import Dashboard from './dashboard';
-import Favorites from './favorites';
+import Venues from './venues';
 
 export default function App(props) {
 	return (
@@ -14,7 +14,7 @@ export default function App(props) {
 					<Route exact path="/" component={Landing} />
 					<Route exact path="/registration" component={RegistrationForm} />
 					<Route exact path="/dashboard" component={Dashboard} />
-					<Route exact path="/favorites" component={Favorites} />
+					<Route exact path="/venues" component={Venues} />
 				</main>
 			</div>
 		</Router>

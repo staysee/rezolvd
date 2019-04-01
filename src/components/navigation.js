@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import '../styles/navigation.css';
 
 export default function Navigation(props) {
+
     return (
         <nav>
             <div className="logo">
