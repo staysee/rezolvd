@@ -48,6 +48,8 @@ export class Venues extends React.Component {
         );
         return (
             <div>
+                <div className="search-venue">
+                </div>
                 <ul>{ venueList }</ul>
             </div>
             

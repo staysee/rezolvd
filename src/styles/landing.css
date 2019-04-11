@@ -1,7 +1,8 @@
 body {
     background-image: url("./garrett-parker-247217-unsplash.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	height: 100vh;
     color: white;
 }
 .title, .description, .description-2 {
@@ -9,16 +10,15 @@ body {
 }
 
 .title {
-    /* color: rgb(202, 88, 117); */
     color: #d9235f;
     font-size: 3.5em;
 }
 
-.container {
+.landing-container {
     width: 75%;
     border-radius: 5px;
     margin: 0 auto;
-    height: 400px;
+    height: 430px;
     border: 1px dotted white;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px
@@ -59,7 +59,7 @@ body {
     width: 150px;
     border-radius: 5px;;
     display: block;
-    margin: 0 auto;
+    margin: 5px auto;
 }
 
 .sign-up a {
@@ -75,4 +75,16 @@ button.join {
 
 button.login {
     background-color: #5a5e62;
+}
+
+
+
+@media only screen and (max-width: 719px){
+    .feature {
+        height: 150px;
+        width: 100%;
+        margin: auto;
+        padding: 5px;
+
+    }
 }

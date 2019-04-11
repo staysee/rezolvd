@@ -22,7 +22,7 @@ export class LoginForm extends React.Component {
         }
         return (
             <div>
-                <h1 class="title">REZOLVD</h1>
+                <Link to="/" style={{textDecoration:'none'}}><h1 class="title">REZOLVD</h1></Link>
                 <form
                     className="login-form"
                     onSubmit={this.props.handleSubmit(values =>

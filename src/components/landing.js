@@ -19,7 +19,7 @@ export default class Landing extends React.Component {
             <div className="landing">
                 <h1 class="title">REZOLVD</h1>
 
-                <div className="container">
+                <div className="landing-container">
                     <p class="description">Are your friends indecisive? Do you pick fights over where dinner will be?<br />Rezolvd alleviates the stress of picking your next group hangout!</p>
 
                     <div className="product-features">

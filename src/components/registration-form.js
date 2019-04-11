@@ -1,6 +1,8 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
+import {registerUser} from '../actions/users';
+import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 import '../styles/registration-form.css';
@@ -24,8 +26,8 @@ export class RegistrationForm extends React.Component {
         // const {fields: {firstName, lastName, email}, handleSubmit} = this.props;
         return (
             <div>
-                <h1 class="title">REZOLVD</h1>
-            
+                <Link to="/" style={{textDecoration:'none'}}><h1 className="title">REZOLVD</h1></Link>
+
                 <form
                     className="registration-form"
                     onSubmit={this.props.handleSubmit(values =>
