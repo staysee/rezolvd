@@ -8,44 +8,34 @@ const API_URL = '';
 
 class SearchVenues extends React.Component {
     state = {
-        query: '',
-        results: []
+        term: ''
     }
     
-    getInfo = () => {
-        axios
-            .get(`${API_URL}?api_key=${API_KEY}&prefix=${this.state.query}&limit=7`)
-            .then(({ data }) => {
-                this.setState({
-                    results: data.data
-                })
-            })
-    }
-
-    handleInputChange = () => {
+    handleChange = (event) => {
         this.setState({
-            query: this.search.value
-        }, () => {
-            if (this.state.query && this.state.query.length > 1){
-                if (this.state.query.length % 2 === 0 ){
-                    this.getInfo()
-                }
-            }
-        })
+            term: event.target.value
+        });
     }
 
-    
+    handleSubmit = event => {
+        event.preventDefault();
+        this.props.handleFormSubmit(this.state.term);
+    }
 
     render() {
         return (
-            <form>
-                <input
-                    placeholder="Search for..."
-                    ref={input => this.search = input}
-                    onChange={this.handleInputChange}
-                />
-                <p>{this.state.query}</p>
-            </form>
+            <div className="search-bar">
+                <form onSubmit={this.handleSubmit} className="form">
+                    <div className="field">
+                        <label htmlFor='venue-search'>Venue Search</label>
+                        <input
+                            onChange={this.handleChange}
+                            name='venue-search'
+                            type='text'
+                            value={this.state.term}/>
+                    </div>
+                </form>
+            </div>
         )
     }
 }
