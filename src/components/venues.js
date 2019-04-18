@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import '../styles/venues.css';
+
 export class Venues extends React.Component {
     constructor(props) {
         super();
@@ -44,7 +46,7 @@ export class Venues extends React.Component {
 
     render() {
         const venueList = this.state.venues.map(item =>
-            <li>{item.venue.name}</li>	
+            <li className="venue-name">{item.venue.name}</li>	
         );
         return (
             <div>

@@ -21,7 +21,7 @@ nav {
     color: #d9235f;
     font-weight: bolder;
 }
-ul {
+.nav-links {
     list-style: none;
     float: right;
 }

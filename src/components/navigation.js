@@ -10,7 +10,7 @@ export default function Navigation(props) {
             <div className="logo">
                 rezolvd
             </div>
-            <ul>
+            <ul className="nav-links">
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Find Friends</a></li>
                 <li><a href="#">Log Out</a></li>
