@@ -2,3 +2,21 @@
     font-weight: bolder;
     display: block;
 }
+
+.venue-results {
+    /* background-color: white; */
+    border: 2px solid white;
+}
+
+.venue-results {
+    text-align: center;
+}
+
+
+/* 
+
+venue-name">{name}</h3>
+                <p className="venue-address">{location.address}</p>
+                <span className="venue-city">{location.city}, </span>
+                <span className="venue-state">{location.state}</span>
+                <span className="venue-postal" */

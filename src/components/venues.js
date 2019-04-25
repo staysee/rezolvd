@@ -4,55 +4,27 @@ import axios from 'axios';
 import '../styles/venues.css';
 
 export class Venues extends React.Component {
-    constructor(props) {
-        super();
-
-        this.state = {
-        	venues: []
-        }
-    }
-
-    componentDidMount() {
-        const clientID = process.env.REACT_APP_FOURSQUARE_CLIENT_ID;
-            const clientSECRET = process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET;
-            //console.log(clientID)
-        //console.log(clientSECRET)
-
-        const BASE_URL = 'https://api.foursquare.com/v2/venues/explore?';
-
-        axios
-            .get(BASE_URL, {
-                params: {
-                    near: "Los Angeles",
-                    query: "sushi",
-                    limit: 5,
-                    v: 20190204,
-                    client_id: clientID,
-                    client_secret: clientSECRET
-                }
-            })
-            .then(response => {
-                let items = response.data.response.groups[0].items;
-                console.log(items);
-                this.setState({
-                    venues: items
-                })
-            })
-            .catch(error => {
-                console.log(error.response);
-            })
-        
-    }
 
     render() {
-        const venueList = this.state.venues.map(item =>
-            <li className="venue-name">{item.venue.name}</li>	
-        );
+    
+        const { name, location, categories } = this.props.details.venue;
+    // console.log(this);
+    // console.log(this.props.details.venue);
+
+
+
+
+        // const venueList = this.state.venues.map(item =>
+        //     <li className="venue-name">{item.venue.name}</li>	
+        // );
         return (
-            <div>
-                <div className="search-venue">
+            <div className="venue-results">
+                <h3 className="venue-name">{name}</h3>
+                <div className="venue-location">
+                    <p className="venue-address">{location.formattedAddress[0]}</p>
+                    <p className="venue-address">{location.formattedAddress[1]}</p>
                 </div>
-                <ul>{ venueList }</ul>
+                <button onClick={() => this.props.addToFavorites(this.props.index)}>SAVE</button>
             </div>
             
         );

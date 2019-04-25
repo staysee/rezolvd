@@ -1,9 +1,10 @@
 import React from 'react';
+import '../styles/dashboard.css';
 
 import Navigation from './navigation';
 import Venues from './venues';
-import '../styles/dashboard.css';
 import SearchVenues from './search-venues';
+import Favorites from './favorites';
 
 export default class Dashboard extends React.Component {
     render() {
@@ -18,8 +19,9 @@ export default class Dashboard extends React.Component {
                         <div className="action-step">Choose My Hangout</div>
                     </section>
                     <section className="screen">
-                        <SearchVenues />
-                        <Venues />
+                        <Favorites />
+                        {/* <SearchVenues />
+                        <Venues /> */}
                     </section>
                 </div>
             </main> 

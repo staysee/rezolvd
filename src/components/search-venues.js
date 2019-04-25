@@ -7,20 +7,25 @@ const { API_KEY } = process.env
 const API_URL = '';
 
 class SearchVenues extends React.Component {
-    state = {
-        term: ''
-    }
+    // constructor(props) {
+    //     super(props);
+
+    //     this.state = {
+    //         searchTerm: '',
+    //         venues: []
+    //     }
+    // }
     
     handleChange = (event) => {
-        this.setState({
-            term: event.target.value
-        });
+        const searchTerm = event.currentTarget.value;
+        // this.setState({searchTerm});
+        // this.props.onSearchTermChange(event);
     }
 
-    handleSubmit = event => {
-        event.preventDefault();
-        this.props.handleFormSubmit(this.state.term);
-    }
+    // handleSubmit = event => {
+    //     event.preventDefault();
+    //     this.props.handleFormSubmit(this.state.term);
+    // }
 
     render() {
         return (
@@ -32,7 +37,16 @@ class SearchVenues extends React.Component {
                             onChange={this.handleChange}
                             name='venue-search'
                             type='text'
-                            value={this.state.term}/>
+                            placeholder='Enter your search...'
+                         />
+                    </div>
+                    <div className="field">
+                        <label htmlFor='search-location'>Location</label>
+                        <input
+                            name='search-location'
+                            type='text'
+                            placeholder='City, State' />
+                            
                     </div>
                 </form>
             </div>
